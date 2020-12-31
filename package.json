@@ -4,14 +4,14 @@
   "description": "bot para consulta de precios de criptos",
   "main": "index.js",
   "scripts": {
-    "test": "node src/index.js"
+    "test": "node src/index"
   },
   "repository": {
     "type": "git",
     "url": "C:/Users/ivang/Desktop/telegramBot/.git/"
   },
   "keywords": [
-    "telergam",
+    "telegram",
     "bot",
     "api",
     "backend"
