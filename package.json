@@ -4,7 +4,7 @@
   "description": "bot para consulta de precios de criptos",
   "main": "index.js",
   "scripts": {
-    "test": "node src/index"
+    "start": "node src/index"
   },
   "repository": {
     "type": "git",
