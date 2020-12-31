@@ -1,0 +1,28 @@
+{
+  "name": "telegrambot",
+  "version": "1.0.0",
+  "description": "bot para consulta de precios de criptos",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "C:/Users/ivang/Desktop/telegramBot/.git/"
+  },
+  "keywords": [
+    "telergam",
+    "bot",
+    "api",
+    "backend"
+  ],
+  "author": "Gabriel",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
+}
