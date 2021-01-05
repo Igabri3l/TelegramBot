@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
+// require
 
 // settings
 app.set('port', process.env.PORT || 8080)
@@ -10,9 +11,6 @@ app.use(cors())
 app.use(express.json())
 
 // routes
-app.get('/api', (req, res) => {
-  console.log('la api funciona')
-  res.send({ messege: true, port: `${app.set('port')}` })
-})
+app.use('/telegram', require('./routers/telegram.routes'))
 
 module.exports = app
