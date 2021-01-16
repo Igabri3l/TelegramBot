@@ -6,7 +6,7 @@ const binance = new Binance().options({ APIKEY, APISECRET })
 async function precio () {
   const price = await binance.bookTickers('BTCUSDT')
   console.log(price)
-  return price
+  return price.bidPrice
 }
 
 const ctrlTelegram = {}
