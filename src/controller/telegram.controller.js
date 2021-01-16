@@ -2,12 +2,15 @@ const axios = require('axios')
 const Binance = require('node-binance-api')
 const { urlBase, urlApi, APIKEY, APISECRET } = require('../config/config.js')
 const binance = new Binance().options({ APIKEY, APISECRET })
-
+let btc
 async function precio () {
   const price = await binance.bookTickers('BTCUSDT')
   console.log(price)
-  return price.bidPrice
+  btc = price
+  return btc
 }
+
+precio()
 
 const ctrlTelegram = {}
 
@@ -23,7 +26,7 @@ ctrlTelegram.eco = async (req, res) => {
     text: `Eco: ${response.text}`
   }
   if (response.text === '/price') {
-    message.text = precio()
+    message.text = btc
   }
   await axios.post(`${urlBase}/sendMessage`, message)
   res.send({ status: 'complete' })
