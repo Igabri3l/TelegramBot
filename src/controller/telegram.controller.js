@@ -20,8 +20,8 @@ ctrlTelegram.eco = async (req, res) => {
     message.text = price.bidPrice
   }
   if (response.text === '/price usd') {
-    const price = await axios.get('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
-    message.text = `compra: ${JSON.parse(price)[1].casa.compra} venta: ${JSON.parse(price)[1].casa.venta}`
+    const precio = await axios.get('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+    message.text = `compra: ${precio.data[1].casa.compra} venta: ${precio.data[1].casa.venta}`
   }
   await axios.post(`${urlBase}/sendMessage`, message)
   res.send({ status: 'complete' })
