@@ -15,9 +15,13 @@ ctrlTelegram.eco = async (req, res) => {
     chat_id: response.chat.id,
     text: `Eco: ${response.text}`
   }
-  if (response.text === '/price') {
+  if (response.text === '/price btc') {
     const price = await binance.bookTickers('BTCUSDT')
     message.text = price.bidPrice
+  }
+  if (response.text === '/price usd') {
+    const price = await axios.get('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+    message.text = `compra: ${JSON.parse(price)[1].casa.compra} venta: ${JSON.parse(price)[1].casa.venta}`
   }
   await axios.post(`${urlBase}/sendMessage`, message)
   res.send({ status: 'complete' })
